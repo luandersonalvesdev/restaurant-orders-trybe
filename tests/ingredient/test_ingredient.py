@@ -11,9 +11,9 @@ def test_ingredient():
 
     assert queijo_muss_ing.__repr__() == "Ingredient('queijo mussarela')"
 
-    assert (queijo_muss_ing == bacon) == False
+    assert (queijo_muss_ing == bacon) is False
 
-    assert (queijo_muss_ing == queijo_muss_ing) == True
+    assert (queijo_muss_ing == queijo_muss_ing) is True
 
     assert queijo_muss_ing.__hash__() != bacon.__hash__()
 
@@ -25,4 +25,3 @@ def test_ingredient():
     }
 
     assert queijo_muss_ing.restrictions == expected_restrictions_queijo_muss
-    

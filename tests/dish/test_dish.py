@@ -33,9 +33,9 @@ def test_dish():
 
     assert dish_strogonof.get_ingredients() == {queijo_muss_ing}
 
-    expected_restrictions_queijo_muss = {
+    restrictions_queijo_muss = {
         Restriction.LACTOSE,
         Restriction.ANIMAL_DERIVED,
     }
 
-    assert dish_strogonof.get_restrictions() == expected_restrictions_queijo_muss
+    assert dish_strogonof.get_restrictions() == restrictions_queijo_muss
