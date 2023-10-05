@@ -28,8 +28,10 @@ class MenuBuilder:
     def get_main_menu(self, restriction=None) -> List[Dict]:
         new_main_menu = []
         for dish in self.menu_data.dishes:
-            filtered_dishes = dish.get_restrictions().intersection({restriction})
-            
+            filtered_dishes = dish.get_restrictions().intersection(
+                {restriction}
+                )
+
             if not len(filtered_dishes):
                 new_main_menu.append({
                     "dish_name": dish.name,
