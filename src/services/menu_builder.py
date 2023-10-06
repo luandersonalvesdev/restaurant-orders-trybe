@@ -32,7 +32,12 @@ class MenuBuilder:
                 {restriction}
                 )
 
-            if not len(filtered_dishes):
+            ingredients_available = all(
+                ingredient in self.inventory.inventory
+                for ingredient in dish.get_ingredients()
+            )
+
+            if not len(filtered_dishes) and ingredients_available:
                 new_main_menu.append({
                     "dish_name": dish.name,
                     "ingredients": dish.get_ingredients(),
